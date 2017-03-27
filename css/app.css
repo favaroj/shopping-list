@@ -1,0 +1,50 @@
+html {
+	font-size: 20px;
+	font-family: 'Raleway', sans-serif;
+	background-color: #00539F;
+}
+
+.main-header {
+	font-size: 60px;
+	text-align: center;
+	margin: 0;
+	padding: 20px 0;
+	color: 00539F;
+	text-shadow: 3px 3px 1px black;
+}
+
+.main-menu {
+	font-size: 40px;
+
+}
+
+.main-menu-ul {
+	line-spacing
+}
+
+.setup-instruct-header {
+	font-size: 20px;
+}
+
+.setup-instruct-ol {
+	font-size: 16px;
+}
+
+p, li {
+	line-height: 2;
+	letter-spacing: 1px;
+}
+
+body {
+	width: 600px;
+	margin: 0 auto;
+	background-color: white;
+	padding: 0 20px 20px 20px;
+	border: 5px solid black;
+}
+
+.main-page-image {
+	width: 200px;
+	display: block;
+	margin: 0 auto;
+}
