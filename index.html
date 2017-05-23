@@ -1,65 +1,37 @@
-
 <!DOCTYPE HTML>
 <html>
-
 	<head>
 		<meta charset="utf-8" />
-		<title>Shopping List</title>
-		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-		<link href="css/app.css" rel="stylesheet" type="text/css" />
-  </head>
-
-  <body>
-		<h1>Shopping List</h1>
-    <img src="img/grocery-cart-icon-27.jpeg" alt="Grocery Cart Image">
-    <h3>Main Menu</h3>
-
-		<div class="buttons">
-			<button id="enterPortal">Go To List Portal</button>
-			<button id="createPortal" onsubmit="goToCreatePortal();return false;">Create List Portal</button>
-		</div>
-
-		<div id="wrapper">
-			<h5>First-Time Setup:</h5>
-			<ol>
-				<li>Click on Create List Portal.</li>
-				<li>Click on Go To List Portal.</li>
-				<li>Create Lists and add Item!</li>
-			</ol>
-		</div>
-
+		<link href="css/app.css" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+		<title>List Portal</title>
+		<img src="img/shoppingCart-image.png" alt="Shopping Cart Image">
+		<h1 style="h1">List Portal</h1>
+	</head>
+	<body>
+		<p id="date">
+			<script>
+				var date = new Date();
+				document.getElementById("date").innerHTML = date.toLocaleString();//.toDateString();
+				//alert(date);
+			</script>
+			<!--<script> document.write(new Date().toLocaleDateString()); </script>-->
+		</p>
+		<h3 style="h3">Current Lists</h3>
+		<form class="listBtns">
+			<div>
+				<a href="Walmart/WalmartMain.html">Walmart</a>
+			</div>
+			<div>
+				<a href="Amazon.html">Amazon</a>
+			</div>
+			<div>
+				<a href="Ross.html">Ross</a>
+			</div>
+			<div>
+				<a href="Costco.html">Costco</a>
+			</div>
+		</form>
 		<script src="scripts/main.js"></script>
-  </body>
+	</body>
 </html>
-
-
-
-<!--
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>My test page</title>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link href="styles/style.css" rel="stylesheet" type="text/css">
-  </head>
-  <body>
-    <h1>Mozilla is cool</h1>
-    <img src="images/firefox-icon.png" alt="The Firefox logo: a flaming fox surrounding the Earth.">
-
-    <p>At Mozilla, we’re a global community of</p>
-
-    <ul> <! changed to list in the tutorial
-      <li>technologists</li>
-      <li>thinkers</li>
-      <li>builders</li>
-    </ul>
-
-    <p>working together to keep the Internet alive and accessible, so people worldwide can be informed contributors and creators of the Web. We believe this act of human collaboration across an open platform is essential to individual growth and our collective future.</p>
-
-    <p>Read the <a href="https://www.mozilla.org/en-US/about/manifesto/">Mozilla Manifesto</a> to learn even more about the values and principles that guide the pursuit of our mission.</p>
-  <button>Change user</button>
-  <script src="scripts/main.js"></script>
-  </body>
-</html>
--->
