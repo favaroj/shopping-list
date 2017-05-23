@@ -8,4 +8,45 @@
 		<img src="./../img/shoppingCart-image.png" alt="Shopping Cart Image">
 		<h1 style="h1">Walmart</h1>
 	</head>
+	<body>
+		<div class="amazonBtns">
+			<a href="./../ListPortal.html" id="portalBtn">Return To Portal</a>
+			<a href="https://grocery.walmart.com/" target="_blank" id="amznLinkBtn">Walmart Grocery</a>
+		</div>
+		<h3 style="h3">Current Lists</h3>
+		<form class="listBtns">
+			<div>
+				<a href="./Produce.html">Produce</a>
+			</div>
+			<div>
+				<a href="./Dairy.html">Dairy</a>
+			</div>
+			<div>
+				<a href="./Meat.html">Meat</a>
+			</div>
+			<div>
+				<a href="./Misc-Food.html">Misc. Food</a>
+			</div>
+			<div>
+				<a href="./Non-Food.html">Non-Food</a>
+			</div>
+			<div>
+				<a href="./Canned.html">Canned</a>
+			</div>
+		</form>
+	</body>
+	<script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+	<script>
+		// Initialize Firebase
+		var config = {
+			apiKey: "AIzaSyAGwqziE1aB7oxkAeGAT8EIxRUol6O_fO0",
+			authDomain: "shoppinglist-c4690.firebaseapp.com",
+			databaseURL: "https://shoppinglist-c4690.firebaseio.com",
+			projectId: "shoppinglist-c4690",
+			storageBucket: "shoppinglist-c4690.appspot.com",
+			messagingSenderId: "665003354084"
+		};
+		firebase.initializeApp(config);
+	</script>
+	<script type="text/javascript" src="scripts/main.js"></script>
 </html>

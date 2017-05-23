@@ -1,19 +1,22 @@
-//import * as firebase from 'firebase';
-/*
-var firebase = require('firebase');
-require(['require', 'firebase'], function (require) {
-    var firebase = require('firebase');
-});
-*/
-var amazonRef = firebase.database().ref('Lists/Amazon');
+const amazonRef = firebase.database().ref('Lists/Amazon');
+const cannedRef = firebase.database().ref('Lists/Walmart/Canned');
+/*const amazon = document.getElementById("amazonList");*/
 
 document.getElementById("addItem").addEventListener('click', function() {
 	//if(event.which == 13 || event.keyCode ==13) {
+		/*var amazon = document.getElementById("amazonList");*/
+		var canned = document.getElementById("cannedList");
 		var itemName = document.getElementById("itemName").value.trim();
 		if(itemName.length > 0) {
 			saveToFB(itemName);
 			var li = "<li>" + itemName + "<li>";
-			document.getElementById("amazonList").innerHTML += li;
+			if(amazon) {
+				amazon.innerHTML += li;
+			}
+			else if (canned) {
+				canned.innerHTML += li;
+			}
+			/*document.getElementById("amazonList").innerHTML += li;*/
 		}
 		document.getElementById("itemName").value = "";
 		alert(" " + itemName + " has been added!");
@@ -26,14 +29,19 @@ function saveToFB(itemName) {
 	amazonRef.push({
 		title: itemName
 	});
+	cannedRef.push({
+		title: itemName
+	})
 };
 
-function refreshList(list) {
+function refreshList(list, element) {
 	var ls = '';
 	for (var i = 0; i < list.length; i++) {
 		ls += '<li data-key="' + list[i].key + '">' + list[i].title + ' ' + genLinks(list[i].key, list[i].title) + '</li>';
 	};
-	document.getElementById('amazonList').innerHTML = ls;
+	/*document.getElementById('amazonList').innerHTML = ls;*/
+	/*document.getElementById('cannedList').innerHTML = ls;*/
+	document.getElementById(element).innerHTML = ls;
 };
 
 function genLinks(key, itName) {
@@ -44,9 +52,9 @@ function genLinks(key, itName) {
 };
 
 function edit(key, itName) {
-    var itemName = prompt("Update the item name", itName); // to keep things simple and old skool :D
+    var itemName = prompt("Update the item name", itName);
     if (itemName && itemName.length > 0) {
-        // build the FB endpoint to the item in movies collection
+        // Build the FireBase endpoint to the item
         var updateAmazonRef = buildEndPoint(key);
         updateAmazonRef.update({
             title: itemName
@@ -65,14 +73,17 @@ function del(key, itName) {
 
 function buildEndPoint(key) {
 	var amazonRef = firebase.database().ref('Lists/Amazon').child(key);
+	var cannedRef = firebase.database().ref('Lists/Walmart/Canned').child(key);
 	location.reload();
 	return amazonRef;
+	return cannedRef;
 }
 
 // this will get fired on inital load as well as when ever there is a change in the data
 amazonRef.on("value", function(snapshot) {
 	var data = snapshot.val();
   var list = [];
+	var element = 'amazonList';
   for (var key in data) {
   	if (data.hasOwnProperty(key)) {
     	title = data[key].title ? data[key].title : '';
@@ -85,29 +96,28 @@ amazonRef.on("value", function(snapshot) {
     }
   }
   // refresh the UI
-  refreshList(list);
+  refreshList(list, element);
 });
-/*
-var amazonRef = 'Lists/Amazon';
-var itemsRef = firebase.database().ref(amazonRef);
-itemsRef.on("value", function(snapshot){
-	amazonList.innerText = snapshot;
-	window.alert(snapshot);
-});
-*/
-/* Set text with js
-var mainPageHeading = document.querySelector(".main-header");
-mainPageHeading.textContent = "Shopping List";
-*/
 
-/*
-document.querySelector(".main-header").onclick = function mainHeaderClick() {
-	alert("Already at Main Menu!");
-}
-*/
-/*
-var createPortal = document.getElementById('createPortal');
-*/
+cannedRef.on("value", function(snapshot) {
+	var data = snapshot.val();
+  var list = [];
+	var element = 'cannedList';
+  for (var key in data) {
+  	if (data.hasOwnProperty(key)) {
+    	title = data[key].title ? data[key].title : '';
+      if (title.trim().length > 0) {
+      	list.push({
+        	title: title,
+          key: key
+        })
+      }
+    }
+  }
+  // refresh the UI
+  refreshList(list, element);
+});
+
 
 function setDate() {
 	var date = new Date();

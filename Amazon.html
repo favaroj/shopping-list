@@ -7,13 +7,11 @@
 		<title>Amazon</title>
 		<img src="img/shoppingCart-image.png" alt="Shopping Cart Image">
 		<h1 style="h1">Amazon</h1>
-
-
 	</head>
 	<body>
 		<div class="amazonBtns">
-			<a id="portalBtn">Return To Portal</a>
-			<a id="amznLinkBtn">Amazon.com</a>
+			<a href="ListPortal.html" id="portalBtn">Return To Portal</a>
+			<a href="https://www.amazon.com" target="_blank" id="amznLinkBtn">Amazon.com</a>
 		</div>
 		<input type="text" id="itemName" placeholder="Enter Item Name"/>
 		<a id="addItem">Add</a>
@@ -31,19 +29,6 @@
 			messagingSenderId: "665003354084"
 		};
 		firebase.initializeApp(config);
-
-
-		/*
-		var amazonList = document.getElementById("amazonList");
-		var amazonRef = 'Lists/Amazon';
-		var itemsRef = firebase.database().ref().child('Amazon');
-		itemsRef.on("value", function(snapshot){
-			amazonList.innerText = snapshot;
-			window.alert(snapshot);
-		});
-		alert(snapshot);
-		*/
 	</script>
-	<script type="text/javascript" src="scripts/require.js"></script>
 	<script type="text/javascript" src="scripts/main.js"></script>
 </html>

@@ -10,10 +10,15 @@
 	</head>
 	<body>
 		<p id="date">
+			<script>
+				var date = new Date();
+				document.getElementById("date").innerHTML = date.toLocaleString();//.toDateString();
+				//alert(date);
+			</script>
 			<!--<script> document.write(new Date().toLocaleDateString()); </script>-->
 		</p>
 		<h3 style="h3">Current Lists</h3>
-		<form>
+		<form class="listBtns">
 			<div>
 				<a href="Walmart/WalmartMain.html">Walmart</a>
 			</div>
