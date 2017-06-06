@@ -40,7 +40,7 @@ function genLinks(key, itName) {
 
 function edit(key, itName) {
     var itemName = prompt("Update the item name", itName);
-    if (itemName && itemName.length > 0) {
+    if (itName && itemName.length > 0) {
         // Build the FireBase endpoint to the item
         var updateMiscFoodRef = buildEndPoint(key);
         updateMiscFoodRef.update({
