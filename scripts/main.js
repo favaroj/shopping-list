@@ -1,27 +1,20 @@
+/*
 const amazonRef = firebase.database().ref('Lists/Amazon');
 const cannedRef = firebase.database().ref('Lists/Walmart/Canned');
-/*const amazon = document.getElementById("amazonList");*/
+const amazonList = document.getElementById("amazonList");
+const cannedList = document.getElementById("cannedList");
 
-document.getElementById("addItem").addEventListener('click', function() {
-	//if(event.which == 13 || event.keyCode ==13) {
-		/*var amazon = document.getElementById("amazonList");*/
-		var canned = document.getElementById("cannedList");
+
+document.getElementById("addItemAmazon").addEventListener('click', function() {
 		var itemName = document.getElementById("itemName").value.trim();
 		if(itemName.length > 0) {
 			saveToFB(itemName);
 			var li = "<li>" + itemName + "<li>";
-			if(amazon) {
-				amazon.innerHTML += li;
-			}
-			else if (canned) {
-				canned.innerHTML += li;
-			}
-			/*document.getElementById("amazonList").innerHTML += li;*/
+			amazon.innerHTML += li;
 		}
 		document.getElementById("itemName").value = "";
 		alert(" " + itemName + " has been added!");
 		location.reload();
-	//}
 }, false);
 
 function saveToFB(itemName) {
@@ -43,7 +36,7 @@ function refreshList(list, element) {
 	/*document.getElementById('cannedList').innerHTML = ls;*/
 	document.getElementById(element).innerHTML = ls;
 };
-
+/*
 function genLinks(key, itName) {
     var links = '';
     links += '<a id="editBtn" href="javascript:edit(\'' + key + '\',\'' + itName + '\')">Edit</a> | ';
@@ -55,13 +48,19 @@ function edit(key, itName) {
     var itemName = prompt("Update the item name", itName);
     if (itemName && itemName.length > 0) {
         // Build the FireBase endpoint to the item
-        var updateAmazonRef = buildEndPoint(key);
+        /*var updateAmazonRef = buildEndPoint(key);
         updateAmazonRef.update({
             title: itemName
-        });
+        });*/
+				/*
+				var updateRef = buildEndPoint(key);
+				updateRef.update({
+					title: itemName
+				});
     }
 }
-
+*/
+/*
 function del(key, itName) {
     var response = confirm("Remove \"" + itName + "\" from the list?");
     if (response == true) {
@@ -71,11 +70,16 @@ function del(key, itName) {
     }
 }
 
-function buildEndPoint(key) {
-	var amazonRef = firebase.database().ref('Lists/Amazon').child(key);
+function buildEndPoint(key, refName) {
+	var amazonRef = firebase.databas().ref('Lists/Amazon');
+	if(refName == amazonRef) {
+		refName = firebase.database().ref('Lists/Amazon').child(key);
+		return refName;
+	}
+
 	var cannedRef = firebase.database().ref('Lists/Walmart/Canned').child(key);
 	location.reload();
-	return amazonRef;
+
 	return cannedRef;
 }
 
@@ -158,7 +162,7 @@ amazonClick.onclick = function() {
 	///home/john/ShoppingList_Web/Walmart/WalmartMain.html
 }
 */
-
+/*
 function rossClick() {
 
 }
@@ -187,7 +191,7 @@ if(!localStorage.getItem('name')) {
 setNameButton.onclick = function() {
 	goToCreatePortal();
 }
-
+*/
 
 
 /*

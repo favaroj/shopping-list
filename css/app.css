@@ -55,8 +55,8 @@ input {
   font-size: 15px;
 	border-radius: 7px;
 	margin: 10px auto;
-  max-width: 30px;
-	width: 40px;
+  max-width: 60px;
+	width: 55px;
 }
 
 button, a {
@@ -105,7 +105,7 @@ button, a {
 .costco {
 	padding-left: 125px;
 }
-#addItem {
+.addItem {
 	background-color: #48BBEC; /* Green */
   border: 15px solid #48BBEC;
   color: white;
