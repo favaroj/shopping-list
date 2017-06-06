@@ -43,7 +43,7 @@ input {
 	font-size: 17px;
 }
 
-.amazonBtns {
+.amazonBtns, .rossBtns {
 	padding-bottom: 20px;
 }
 #editBtn, #deleteBtn {

@@ -8,4 +8,26 @@
 		<img src="img/shoppingCart-image.png" alt="Shopping Cart Image">
 		<h1 style="h1">Costco</h1>
 	</head>
+	<body>
+		<div class="costcoBtns">
+			<a href="ListPortal.html" id="portalBtn">Return To Portal</a>
+		</div>
+		<input type="text" id="itemName" placeholder="Enter Item Name"/>
+		<a class="addItem"id="addItemCostco">Add</a>
+		<ol id="costcoList"></ol>
+	</body>
+	<script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+	<script>
+		// Initialize Firebase
+		var config = {
+			apiKey: "AIzaSyAGwqziE1aB7oxkAeGAT8EIxRUol6O_fO0",
+			authDomain: "shoppinglist-c4690.firebaseapp.com",
+			databaseURL: "https://shoppinglist-c4690.firebaseio.com",
+			projectId: "shoppinglist-c4690",
+			storageBucket: "shoppinglist-c4690.appspot.com",
+			messagingSenderId: "665003354084"
+		};
+		firebase.initializeApp(config);
+	</script>
+	<script type="text/javascript" src="scripts/Costco.js"></script>
 </html>
