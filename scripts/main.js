@@ -1,3 +1,4 @@
+
 /*
 const amazonRef = firebase.database().ref('Lists/Amazon');
 const cannedRef = firebase.database().ref('Lists/Walmart/Canned');
@@ -34,8 +35,10 @@ function refreshList(list, element) {
 	};
 	/*document.getElementById('amazonList').innerHTML = ls;*/
 	/*document.getElementById('cannedList').innerHTML = ls;*/
+	/*
 	document.getElementById(element).innerHTML = ls;
-};
+	*/
+//};
 /*
 function genLinks(key, itName) {
     var links = '';

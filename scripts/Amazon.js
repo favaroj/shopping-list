@@ -82,3 +82,11 @@ amazonRef.on("value", function(snapshot) {
   // refresh the UI
   refreshList(list, element);
 });
+/*
+function displayItemCount(snapshot,key) {
+
+}
+amazonRef.child(key).on("value", function(snapshot,key) {
+  console.log("There are "+snapshot.numChildren()+" items");
+})
+*/

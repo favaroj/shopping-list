@@ -46,6 +46,19 @@ input {
 .amazonBtns, .rossBtns {
 	padding-bottom: 20px;
 }
+
+.count {
+	width: 15px;
+	font-size: 18px;
+	flex-direction: row;
+	height: 10px;
+	margin: 5px;
+	padding: 5px;
+	border: 2px;
+	border-radius: 5px;
+	display: inline;
+}
+
 #editBtn, #deleteBtn {
 	background-color: #48BBEC;
   border: 5px solid #48BBEC;
