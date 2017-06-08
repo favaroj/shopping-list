@@ -19,6 +19,7 @@ function saveToFB(itemName) {
 	cannedRef.push({
 		title: itemName
 	})
+	document.getElementById("itemName").value = "";
 };
 
 function refreshList(list, element) {

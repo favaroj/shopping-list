@@ -19,22 +19,27 @@
 		<form class="listBtns">
 			<div>
 				<a href="./Produce.html">Produce</a>
-				<h5 class="count"id="walmartCount">0 Items</h5>
+				<h5 class="count"id="produceCount">0 Items</h5>
 			</div>
 			<div>
 				<a href="./Dairy.html">Dairy</a>
+				<h5 class="count"id="dairyCount">0 Items</h5>
 			</div>
 			<div>
 				<a href="./Meat.html">Meat</a>
+				<h5 class="count"id="meatCount">0 Items</h5>
 			</div>
 			<div>
 				<a href="./Misc-Food.html">Misc. Food</a>
+				<h5 class="count"id="miscFoodCount">0 Items</h5>
 			</div>
 			<div>
 				<a href="./Non-Food.html">Non-Food</a>
+				<h5 class="count"id="nonFoodCount">0 Items</h5>
 			</div>
 			<div>
 				<a href="./Canned.html">Canned</a>
+				<h5 class="count"id="cannedCount">0 Items</h5>
 			</div>
 		</form>
 	</body>
@@ -50,6 +55,87 @@
 			messagingSenderId: "665003354084"
 		};
 		firebase.initializeApp(config);
+
+		var produceRef = firebase.database().ref('Lists/Walmart/Produce');
+		produceRef.on("value", function(snapshot) {
+			var produceCount = document.getElementById('produceCount');
+			produceCount.innerHTML = " " + snapshot.numChildren() + " Items";
+
+			var Count = snapshot.numChildren();
+			console.log(" " + Count);
+			if(Count == 0) {
+				produceCount.style.color = "green";
+			}
+			else {
+				produceCount.style.color = "red";
+			}
+
+		});
+
+		var dairyRef = firebase.database().ref('Lists/Walmart/Dairy');
+		dairyRef.on("value", function(snapshot) {
+			var dairyCount = document.getElementById('dairyCount');
+			dairyCount.innerHTML = " " + snapshot.numChildren() + " Items";
+			var Count = snapshot.numChildren();
+			if(Count == 0) {
+				dairyCount.style.color = "green";
+			}
+			else {
+				dairyCount.style.color = "red";
+			}
+		});
+
+		var meatRef = firebase.database().ref('Lists/Walmart/Meat');
+		meatRef.on("value", function(snapshot) {
+			var meatCount = document.getElementById('meatCount');
+			meatCount.innerHTML = " " + snapshot.numChildren() + " Items";
+			var Count = snapshot.numChildren();
+			if(Count == 0) {
+				meatCount.style.color = "green";
+			}
+			else {
+				meatCount.style.color = "red";
+			}
+		});
+
+		var miscFoodRef = firebase.database().ref('Lists/Walmart/Misc Food');
+		meatRef.on("value", function(snapshot) {
+			var miscFoodCount = document.getElementById('miscFoodCount');
+			miscFoodCount.innerHTML = " " + snapshot.numChildren() + " Items";
+			var Count = snapshot.numChildren();
+			if(Count == 0) {
+				miscFoodCount.style.color = "green";
+			}
+			else {
+				miscFoodCount.style.color = "red";
+			}
+		});
+
+		var nonFoodRef = firebase.database().ref('Lists/Walmart/Non Food');
+		meatRef.on("value", function(snapshot) {
+			var nonFoodCount = document.getElementById('nonFoodCount');
+			nonFoodCount.innerHTML = " " + snapshot.numChildren() + " Items";
+			var Count = snapshot.numChildren();
+			if(Count == 0) {
+				nonFoodCount.style.color = "green";
+			}
+			else {
+				nonFoodCount.style.color = "red";
+			}
+		});
+
+		var cannedRef = firebase.database().ref('Lists/Walmart/Canned');
+		cannedRef.on("value", function(snapshot) {
+			var cannedCount = document.getElementById('cannedCount');
+			cannedCount.innerHTML = " " + snapshot.numChildren() + " Items";
+			var Count = snapshot.numChildren();
+			console.log(" " + Count);
+			if(Count == 0) {
+				cannedCount.style.color = "green";
+			}
+			else {
+				cannedCount.style.color = "red";
+			}
+		});
 	</script>
-	<script type="text/javascript" src="scripts/main.js"></script>
 </html>

@@ -57,18 +57,42 @@
 			var amazonRef = firebase.database().ref('Lists/Amazon');
 			amazonRef.on("value", function(snapshot) {
 				var amazonCount = document.getElementById("amazonCount");
+
+				var total = snapshot.numChildren();
+				if(total == 0) {
+					amazonCount.style.color = "green";
+				}
+				else {
+					amazonCount.style.color = "red";
+				}
 				amazonCount.innerHTML = " "+snapshot.numChildren()+" Items";
 			});
 
 			var rossRef = firebase.database().ref('Lists/Ross');
 			rossRef.on("value", function(snapshot) {
 				var rossCount = document.getElementById("rossCount");
+
+				var total = snapshot.numChildren();
+				if(total == 0) {
+					rossCount.style.color = "green";
+				}
+				else {
+					rossCount.style.color = "red";
+				}
 				rossCount.innerHTML = " "+snapshot.numChildren()+" Items";
 			});
 
 			var costcoRef = firebase.database().ref('Lists/Costco');
 			costcoRef.on("value", function(snapshot) {
 				var costcoCount = document.getElementById("costcoCount");
+
+				var total = snapshot.numChildren();
+				if(total == 0) {
+					costcoCount.style.color = "green";
+				}
+				else {
+					costcoCount.style.color = "red";
+				}
 				costcoCount.innerHTML = " "+snapshot.numChildren()+" Items";
 			});
 
@@ -80,34 +104,22 @@
 				var miscFood = snapshot.child("Misc Food").numChildren();
 				var nonFood = snapshot.child("Non Food").numChildren();
 				var canned = snapshot.child("Canned").numChildren();
+
 				console.log(" " + produce);
 				console.log(" " + dairy);
 				var total = produce + dairy + meat + miscFood + nonFood + canned;
 				console.log(" " + total);
+
 				var walmartCount = document.getElementById("walmartCount");
+				if(total == 0) {
+					walmartCount.style.color = "green";
+				}
+				else {
+					walmartCount.style.color = "red";
+				}
+
 				walmartCount.innerHTML = " " + total + " Items";
 			});
-
-			var produceRef = firebase.database().ref('Lists/Walmart').child('Produce');
-			produceRef.on("value", function(snapshot) {
-				var count = snapshot.numChildren();
-				//console.log(" " + count);
-				var dairyRef = firebase.database().ref('Lists/Walmart').child('Dairy');
-				/*
-				dairyRef.on("value", function(snapshot) {
-					var count2 = snapshot.numChildren();
-					console.log(" " + count2);
-				});
-				*/
-				/*var walmartCount = document.getElementById("walmartCount");
-				walmartCount.innerHTML = " "+snapshot.numChildren()+" Items";*/
-			});
-
-			var dairyRef = firebase.database().ref('Lists/Walmart').child('Dairy');
-			dairyRef.on("value", function(snapshot,count) {
-				//console.log(" " + count);
-			});
-
 		</script>
 		<script src="scripts/main.js"></script>
 	</body>

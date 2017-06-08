@@ -19,6 +19,7 @@ function saveToFB(itemName) {
 	nonFoodRef.push({
 		title: itemName
 	})
+	document.getElementById("itemName").value = "";
 };
 
 function refreshList(list, element) {

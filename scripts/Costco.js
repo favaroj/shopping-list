@@ -18,6 +18,7 @@ function saveToFB(itemName) {
 	costcoRef.push({
 		title: itemName
 	});
+	document.getElementById("itemName").value = "";
 };
 
 function refreshList(list, element) {

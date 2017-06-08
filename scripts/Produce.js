@@ -9,8 +9,6 @@ document.getElementById("addItemProduce").addEventListener('click', function() {
 			var li = "<li>" + itemName + "<li>";
 			amazon.innerHTML += li;
 		}
-		document.getElementById("itemName").value = "";
-		alert(" " + itemName + " has been added!");
 		location.reload();
 }, false);
 
@@ -19,6 +17,7 @@ function saveToFB(itemName) {
 	produceRef.push({
 		title: itemName
 	})
+	document.getElementById("itemName").value = "";
 };
 
 function refreshList(list, element) {
@@ -29,6 +28,7 @@ function refreshList(list, element) {
 	/*document.getElementById('amazonList').innerHTML = ls;*/
 	/*document.getElementById('produceList').innerHTML = ls;*/
 	document.getElementById(element).innerHTML = ls;
+
 };
 
 function genLinks(key, itName) {
