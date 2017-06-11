@@ -1,5 +1,5 @@
-const miscFoodRef = firebase.database().ref('Lists/Walmart/Misc Food');
-const miscFoodList = document.getElementById("miscFoodList");
+var miscFoodRef = firebase.database().ref('Lists/Walmart/Misc Food');
+var miscFoodList = document.getElementById("miscFoodList");
 
 
 document.getElementById("addItemMiscFood").addEventListener('click', function() {

@@ -1,5 +1,5 @@
-const amazonRef = firebase.database().ref('Lists/Amazon');
-const amazonList = document.getElementById("amazonList");
+var amazonRef = firebase.database().ref('Lists/Amazon');
+var amazonList = document.getElementById("amazonList");
 
 document.getElementById("addItemAmazon").addEventListener('click', function() {
 		var itemName = document.getElementById("itemName").value.trim();

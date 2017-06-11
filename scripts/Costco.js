@@ -1,5 +1,5 @@
-const costcoRef = firebase.database().ref('Lists/Costco');
-const costcoList = document.getElementById("costcoList");
+var costcoRef = firebase.database().ref('Lists/Costco');
+var costcoList = document.getElementById("costcoList");
 
 document.getElementById("addItemCostco").addEventListener('click', function() {
 		var itemName = document.getElementById("itemName").value.trim();

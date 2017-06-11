@@ -1,5 +1,5 @@
-const cannedRef = firebase.database().ref('Lists/Walmart/Canned');
-const cannedList = document.getElementById("cannedList");
+var cannedRef = firebase.database().ref('Lists/Walmart/Canned');
+var cannedList = document.getElementById("cannedList");
 
 
 document.getElementById("addItemCanned").addEventListener('click', function() {

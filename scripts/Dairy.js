@@ -1,5 +1,5 @@
-const dairyRef = firebase.database().ref('Lists/Walmart/Dairy');
-const dairyList = document.getElementById("dairyList");
+var dairyRef = firebase.database().ref('Lists/Walmart/Dairy');
+var dairyList = document.getElementById("dairyList");
 
 
 document.getElementById("addItemDairy").addEventListener('click', function() {

@@ -1,5 +1,5 @@
-const nonFoodRef = firebase.database().ref('Lists/Walmart/Non Food');
-const nonFoodList = document.getElementById("nonFoodList");
+var nonFoodRef = firebase.database().ref('Lists/Walmart/Non Food');
+var nonFoodList = document.getElementById("nonFoodList");
 
 
 document.getElementById("addItemNonFood").addEventListener('click', function() {

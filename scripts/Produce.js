@@ -1,5 +1,5 @@
-const produceRef = firebase.database().ref('Lists/Walmart/Produce');
-const produceList = document.getElementById("produceList");
+var produceRef = firebase.database().ref('Lists/Walmart/Produce');
+var produceList = document.getElementById("produceList");
 
 
 document.getElementById("addItemProduce").addEventListener('click', function() {

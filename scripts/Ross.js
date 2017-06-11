@@ -1,5 +1,5 @@
-const rossRef = firebase.database().ref('Lists/Ross');
-const rossList = document.getElementById("rossList");
+var rossRef = firebase.database().ref('Lists/Ross');
+var rossList = document.getElementById("rossList");
 
 
 document.getElementById("addItemRoss").addEventListener('click', function() {
