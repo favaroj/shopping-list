@@ -58,10 +58,11 @@ input {
 	height: 10px;
 	margin: 5px;
 	padding: 5px;
-	border: 2px;
+	border: 2px solid black;
 	border-radius: 5px;
 	display: inline;
 	font-style: bold;
+	background-color: white;
 }
 
 #editBtn, #deleteBtn {
