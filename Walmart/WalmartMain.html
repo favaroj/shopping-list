@@ -99,7 +99,7 @@
 		});
 
 		var miscFoodRef = firebase.database().ref('Lists/Walmart/Misc Food');
-		meatRef.on("value", function(snapshot) {
+		miscFoodRef.on("value", function(snapshot) {
 			var miscFoodCount = document.getElementById('miscFoodCount');
 			miscFoodCount.innerHTML = " " + snapshot.numChildren() + " Items";
 			var Count = snapshot.numChildren();
@@ -112,7 +112,7 @@
 		});
 
 		var nonFoodRef = firebase.database().ref('Lists/Walmart/Non Food');
-		meatRef.on("value", function(snapshot) {
+		nonFoodRef.on("value", function(snapshot) {
 			var nonFoodCount = document.getElementById('nonFoodCount');
 			nonFoodCount.innerHTML = " " + snapshot.numChildren() + " Items";
 			var Count = snapshot.numChildren();

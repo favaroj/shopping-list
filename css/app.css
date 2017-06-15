@@ -44,7 +44,7 @@ input {
 	font-size: 17px;
 }
 #portalBtn {
-	font-size: 20px
+	font-size: 30px;
 }
 .amazonBtns, .rossBtns {
 	padding-bottom: 20px;
@@ -95,7 +95,7 @@ button, a {
 
 }
 #portalBtn, #amznLinkBtn {
-	width: 15px;
+	width: 100%;
 	font-size: 18px;
 	flex-direction: row;
 	height: 10px;
