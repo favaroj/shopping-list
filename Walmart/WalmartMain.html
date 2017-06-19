@@ -18,28 +18,36 @@
 		<h3 style="h3">Current Lists</h3>
 		<form class="listBtns">
 			<div>
-				<a class="btns"href="./Produce.html">Produce</a>
-				<h5 class="count"id="produceCount">0 Items</h5>
-			</div>
-			<div>
 				<a href="./Dairy.html">Dairy</a>
 				<h5 class="count"id="dairyCount">0 Items</h5>
 			</div>
 			<div>
-				<a href="./Meat.html">Meat</a>
-				<h5 class="count"id="meatCount">0 Items</h5>
+				<a href="./Frozen.html">Frozen</a>
+				<h5 class="count"id="frozenCount">0 Items</h5>
 			</div>
 			<div>
 				<a href="./Misc-Food.html">Misc. Food</a>
 				<h5 class="count"id="miscFoodCount">0 Items</h5>
 			</div>
 			<div>
-				<a href="./Non-Food.html">Non-Food</a>
-				<h5 class="count"id="nonFoodCount">0 Items</h5>
-			</div>
-			<div>
 				<a href="./Canned.html">Canned</a>
 				<h5 class="count"id="cannedCount">0 Items</h5>
+			</div>
+			<div>
+				<a href="./Grains.html">Grains</a>
+				<h5 class="count"id="grainsCount">0 Items</h5>
+			</div>
+			<div>
+				<a href="./Meat.html">Meat</a>
+				<h5 class="count"id="meatCount">0 Items</h5>
+			</div>
+			<div>
+				<a class="btns"href="./Produce.html">Produce</a>
+				<h5 class="count"id="produceCount">0 Items</h5>
+			</div>
+			<div>
+				<a href="./Non-Food.html">Non-Food</a>
+				<h5 class="count"id="nonFoodCount">0 Items</h5>
 			</div>
 		</form>
 	</body>
@@ -135,6 +143,34 @@
 			}
 			else {
 				cannedCount.style.color = "red";
+			}
+		});
+
+		var frozenRef = firebase.database().ref('Lists/Walmart/Frozen');
+		frozenRef.on("value", function(snapshot) {
+			var frozenCount = document.getElementById('frozenCount');
+			frozenCount.innerHTML = " " + snapshot.numChildren() + " Items";
+			var Count = snapshot.numChildren();
+			console.log(" " + Count);
+			if(Count == 0) {
+				frozenCount.style.color = "green";
+			}
+			else {
+				frozenCount.style.color = "red";
+			}
+		});
+
+		var grainsRef = firebase.database().ref('Lists/Walmart/Grains');
+		grainsRef.on("value", function(snapshot) {
+			var grainsCount = document.getElementById('grainsCount');
+			grainsCount.innerHTML = " " + snapshot.numChildren() + " Items";
+			var Count = snapshot.numChildren();
+			console.log(" " + Count);
+			if(Count == 0) {
+				grainsCount.style.color = "green";
+			}
+			else {
+				grainsCount.style.color = "red";
 			}
 		});
 	</script>

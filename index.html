@@ -37,6 +37,10 @@
 				<a href="Costco.html">Costco</a>
 				<h5 class="count"id="costcoCount">0 Items</h5>
 			</div>
+			<div>
+				<a href="Meals.html">Meals</a>
+				<h5 class="count"id="mealsCount">0 Meals</h5>
+			</div>
 		</form>
 		<script>
 
@@ -104,10 +108,11 @@
 				var miscFood = snapshot.child("Misc Food").numChildren();
 				var nonFood = snapshot.child("Non Food").numChildren();
 				var canned = snapshot.child("Canned").numChildren();
-
+				var frozen = snapshot.child("Frozen").numChildren();
+				var grains = snapshot.child("Grains").numChildren();
 				console.log(" " + produce);
 				console.log(" " + dairy);
-				var total = produce + dairy + meat + miscFood + nonFood + canned;
+				var total = produce + dairy + meat + miscFood + nonFood + canned + frozen + grains;
 				console.log(" " + total);
 
 				var walmartCount = document.getElementById("walmartCount");
@@ -119,6 +124,20 @@
 				}
 
 				walmartCount.innerHTML = " " + total + " Items";
+			});
+
+			var mealsRef = firebase.database().ref('Lists/Meals');
+			mealsRef.on("value", function(snapshot) {
+				var mealsCount = document.getElementById("mealsCount");
+
+				var total = snapshot.numChildren();
+				if(total == 0) {
+					mealsCount.style.color = "green";
+				}
+				else {
+					mealsCount.style.color = "red";
+				}
+				mealsCount.innerHTML = " "+snapshot.numChildren()+" Meals";
 			});
 		</script>
 		<script src="scripts/main.js"></script>
