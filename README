@@ -1,1 +1,4 @@
-This is a shopping list helper built with javascript, html, and css.
+#Shopping List Wep Page
+Shopping list helper built with HTML/CSS, JS, and firebase(NoSQL with JSON) 
+for real time database synchronization. 
+https://favaroj.github.io/shopping-list/
